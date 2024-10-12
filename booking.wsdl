@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="booking"
+	targetNamespace="http://example.com/booking/wsdl"
+	xmlns:xsd="booking.xsd"
+	xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<message name="destInput">
+		<part name="destination" type="xsd:string"/>
+	</message>
+	
+	<message name="dateInput">
+		<part name="date" type="xsd:string"/>
+	</message>
+	
+	<message name="attendeesInput">
+		<part name="attendees" type="xsd:integer"/>
+	</message>
+	
+	<message name="confirmInput">
+		<part name="confirm" type="xsd:integer"/>
+	</message>
+	
+	<message name="recommendOutput">
+		<part name="recommendation" type="xsd:string"/>
+	</message>
+	
+	<message name="bookTicket">
+		<part name="creditCardDetail" type="xsd:string"/>
+	</message>
+	
+	<message name="invoice">
+		<part name="purchaseInvoice" type="xsd:string"/>
+	</message>
+	
+	<portType name="booking_PortType">
+		<operation name="selectDest">
+			<input message="destInput"/>
+		</operation>
+		
+		<operation name="selectDate">
+			<input message="date"/>
+		</operation>
+		
+		<operation name="selectAttendees">
+			<input message="attendeesInput"/>
+		</operation>
+		
+		<operation name="showRecommendation">
+			<input name="confirmInput"/>
+			<outpput name="recommendOutput"/>
+		</operation>
+
+		<operation name="purchaseTicket">
+			<input message="bookTicket"/>
+			<output message="invoice"/>
+		</operation>
+	</portType>
+</definitions>
