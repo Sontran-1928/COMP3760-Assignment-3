@@ -1,0 +1,20 @@
+<booking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="booking.xsd">
+
+	<activities>
+		<activity>
+			<movie>
+				<activityName>Shrek</activityName>
+				<attendees>2</attendees>
+				<startTime>2024-07-02T18:00:00</startTime>
+				<price>19.99</price>
+			</movie>
+		</activity>
+	</activities>
+	
+	<detail>
+		<firstName>Son</firstName>
+		<creditCardNumber>123456789</creditCardNumber>
+		<expireDate>2024-10</expireDate>
+	</detail>
+</booking>

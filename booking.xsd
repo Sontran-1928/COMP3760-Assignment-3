@@ -1,25 +1,25 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-	<xsd:element name="Invoice" type="order"/>
-	
-	<xsd:complexType name="order">
-		<xsd:sequence>
-			<xsd:element name="name" type="credentialDetail"/>
-			<xsd:element name="activities" type="activitiesType"/>
-		</xsd:sequence>
-	</xsd:complexType>
+	<xsd:element name="booking">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="activities" type="activitiesType"/>
+				<xsd:element name="detail" type="credentialDetail"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>	
 	
 	<xsd:complexType name="credentialDetail">
 		<xsd:sequence>
-			<xsd:element name="firstName" type="xsd:string">
-			<xsd:element name="creditCardNumber" type="xsd:string">
-			<xsd:element name="expireDate" type="xsd:gYearMonth">
+			<xsd:element name="firstName" type="xsd:string"/>
+			<xsd:element name="creditCardNumber" type="xsd:string"/>
+			<xsd:element name="expireDate" type="xsd:gYearMonth"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	<xsd:complexType name="activitiesType">
 		<xsd:sequence>
-			<xsd:element name="activity" type="activityType" maxOccurs="unbounded">
+			<xsd:element name="activity" type="activityType" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
@@ -33,19 +33,20 @@
 	
 	<xsd:complexType name="hotelOrderType">
 		<xsd:sequence>
+			<xsd:element name="hotelName" type="xsd:string"/>
 			<xsd:element name="attendees" type="xsd:integer"/>
 			<xsd:element name="startTime" type="xsd:dateTime"/>
 			<xsd:element name="endTime" type="xsd:dateTime"/>
-			<xsd:element name="price" type="xsd:priceType"/>
+			<xsd:element name="price" type="priceType"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	<xsd:complexType name="activityOrderType">
 		<xsd:sequence>
+			<xsd:element name="activityName" type="xsd:string"/>
 			<xsd:element name="attendees" type="xsd:integer"/>
-			<xsd:element name="movieName" type="xsd:string"/>
 			<xsd:element name="startTime" type="xsd:dateTime"/>
-			<xsd:element name="price" type="xsd:priceType"/>
+			<xsd:element name="price" type="priceType"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
