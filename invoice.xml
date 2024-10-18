@@ -1,0 +1,35 @@
+<invoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="invoice.xsd">
+
+	<activities>
+		<hotel>
+			<hotelName>Sydney Boutique Hotel</hotelName>
+			<attendees>2</attendees>
+			<startTime>2024-10-18T18:00:00</startTime>
+			<endTime>2024-10-19T12:00:00</endTime>
+			<totalPrice currency="AUS">150</price>
+		</hotel>
+		
+		<activity>
+			<activityType>Movie</activityType>
+			<activityName>Shrek</activityName>
+			<attendees>2</attendees>
+			<startTime>2024-10-19T18:00:00</startTime>
+			<totalPrice currency="AUS">19.98</price>
+		</activity>
+		
+		<activity>
+			<activityType>Museum</activityType>
+			<activityName>Museum of Sydney</activityName>
+			<attendees>2</attendees>
+			<startTime>2024-10-20T13:00:00</startTime>
+			<totalPrice currency="AUS">40</price>
+		</activity>
+	</activities>
+	
+	<detail>
+		<firstName>Son</firstName>
+		<creditCardNumber>123456789</creditCardNumber>
+		<expireDate>2024-10</expireDate>
+	</detail>
+</invoice>

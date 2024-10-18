@@ -1,0 +1,59 @@
+<recommendation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="recommendation.xsd">
+	   
+	<lookUp>
+		<destination>Sydney</destination>
+		<attendees>2</attendees>
+		<travelDate>2024-10-18</travelDate>
+	</lookUp>
+	
+	<recommend>
+		<travel>
+			<flight>
+				<travelCompany>Quantas</travelCompany>
+				<travelFrom>Perth</travelFrom>
+				<travelTo>Sydney</travelTo>
+				<travelDuration>PT4H10M</travelDuration>
+				<price currency="AUS">830</price>
+			</flight>
+			<ship>
+				<travelCompany>Cunard</travelCompany>
+				<travelFrom>Perth</travelFrom>
+				<travelTo>Sydney</travelTo>
+				<travelDuration>P12D</travelDuration>
+				<travelStops>12</travelStops>
+				<price currency="AUS">4400</price>
+			</ship>
+		</travel>
+		
+		<hotel>
+			<hotelName>Sydney Boutique Hotel</hotelName>
+			<hotelAddress>114 Darlinghurst Rd, Darlinghurst NSW 2010</hotelAddress>
+			<hotelStarRating>4.0</hotelStarRating>
+			<pricePerNight currency="AUS">160.00</pricePerNight>
+			<hotelPhoneNumber>0280185636</hotelPhoneNumber>
+		</hotel>
+		
+		<activities>
+			<activity>
+				<activityType>Movie</activityType>
+				<activityName>Shrek</activityName>
+				<activityCompany>IMAX</activityCompany>
+				<activityLocation>1/35 Wheat Rd, Sydney NSW 2000</activityLocation>
+				<activityStartTime>2024-10-19T18:00:00</activityStartTime>
+				<activityDuration>PT1H30M</activityDuration>
+				<price currency="AUS">9.99</price>
+			</activity>
+			
+			<activity>
+				<activityType>Museum</activityType>
+				<activityName>Museum of Sydney</activityName>
+				<activityLocation>Cnr Bridge St, Phillip St, Sydney NSW 2000</activityLocation>
+				<activityStartTime>2024-10-20T13:00:00</activityStartTime>
+				<activityDuration>PT2H</activityDuration>
+				<price currency="AUS">20</price>
+			</activity>
+		</activities>
+	</recommend>
+	
+</recommendation>
