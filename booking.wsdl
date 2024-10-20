@@ -1,58 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<definitions name="booking"
+<wsdl:definitions name="booking"
 	targetNamespace="http://example.com/booking/wsdl"
-	xmlns:xsd="booking.xsd"
-	xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/">
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:inv="invoice.xsd"
+	xmlns:recommend="recommendation.xsd">
 
-	<message name="destInput">
-		<part name="destination" type="xsd:string"/>
-	</message>
+	<wsdl:message name="destInput">
+		<wsdl:part name="destination" type="xsd:string"/>
+	</wsdl:message>
 	
-	<message name="dateInput">
-		<part name="date" type="xsd:string"/>
-	</message>
+	<wsdl:message name="dateInput">
+		<wsdl:part name="date" type="xsd:date"/>
+	</wsdl:message>
 	
-	<message name="attendeesInput">
-		<part name="attendees" type="xsd:integer"/>
-	</message>
+	<wsdl:message name="attendeesInput">
+		<wsdl:part name="attendees" type="xsd:integer"/>
+	</wsdl:message>
 	
-	<message name="confirmInput">
-		<part name="confirm" type="xsd:integer"/>
-	</message>
+	<wsdl:message name="confirmInput">
+		<wsdl:part name="confirm" type="xsd:string"/>
+	</wsdl:message>
 	
-	<message name="recommendOutput">
-		<part name="recommendation" type="xsd:string"/>
-	</message>
+	<wsdl:message name="recommendOutput">
+		<wsdl:part name="placeRecommendation" type="recommend:recommendation"/>
+	</wsdl:message>
 	
-	<message name="bookTicket">
-		<part name="creditCardDetail" type="xsd:string"/>
-	</message>
+	<wsdl:message name="bookTicket">
+		<wsdl:part name="creditCardDetail" type="inv:credentialDetail"/>
+	</wsdl:message>
 	
-	<message name="invoice">
-		<part name="purchaseInvoice" type="xsd:string"/>
-	</message>
+	<wsdl:message name="purchaseInvoice">
+		<wsdl:part name="purInvoice" type="inv:invoice"/>
+	</wsdl:message>
 	
-	<portType name="booking_PortType">
-		<operation name="selectDest">
-			<input message="destInput"/>
-		</operation>
-		
-		<operation name="selectDate">
-			<input message="date"/>
-		</operation>
-		
-		<operation name="selectAttendees">
-			<input message="attendeesInput"/>
-		</operation>
-		
-		<operation name="showRecommendation">
-			<input name="confirmInput"/>
-			<outpput name="recommendOutput"/>
-		</operation>
-
-		<operation name="purchaseTicket">
-			<input message="bookTicket"/>
-			<output message="invoice"/>
-		</operation>
-	</portType>
-</definitions>
+	<wsdl:portType name="lookUpRecommend_PortType">
+		<wsdl:operation name="lookUpRecommend">
+			<wsdl:input message="destInput"/>
+			<wsdl:input message="date"/>
+			<wsdl:input message="attendeesInput"/>
+			<wsdl:output message="recommendOutput"/>
+		</wsdl:operation>	
+	</wsdl:portType>
+	
+	<wsdl:portType name="purchaseTicket_PortType">
+		<wsdl:operation name="purchaseTicket">
+			<wsdl:input message="bookTicket"/>
+			<wsdl:output message="invoice"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>
